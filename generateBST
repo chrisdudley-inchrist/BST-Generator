@@ -1,0 +1,17 @@
+private static BST generateBST(int numNodes, int minVal, int maxVal) {
+        Set<Integer> tempArray = new LinkedHashSet<>();
+
+        while (tempArray.size() < numNodes) {
+            tempArray.add((int) (Math.random() * ((maxVal - minVal + 1)) + minVal));
+        }
+
+        int[] bstArray = new int[tempArray.size()];
+        int index = 0;
+
+        for (int i : tempArray) {
+            bstArray[index++] = i;
+        }
+
+        BST bst = new BST(bstArray);
+        return bst;
+    }
